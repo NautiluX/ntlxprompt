@@ -1,1 +1,5 @@
 # ntlxprompt
+
+## Prerequisites
+
+* Nerd fonts
