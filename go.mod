@@ -1,8 +1,9 @@
-module github.com/NautiluX/prompt
+module github.com/NautiluX/ntlxprompt
 
 go 1.23.6
 
 require (
+	github.com/TwiN/go-color v1.4.1
 	github.com/go-git/go-git/v5 v5.14.0
 	golang.org/x/term v0.29.0
 )
