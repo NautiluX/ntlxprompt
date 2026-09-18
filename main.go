@@ -148,10 +148,13 @@ func makePrompt() string {
 	segments = addGitSeg(segments)
 	segments = trimSegments(segments)
 
+	trimRe := regexp.MustCompile("\001[^\002]*\002")
+	promptlen := utf8.RuneCountInString(trimRe.ReplaceAllString(strings.Join(segments, " | "), ""))
 	return fmt.Sprintf(
-		"\n%s %s\001 \002",
+		"\r\n%s %s \001\033[%dG\002",
 		strings.Join(segments, " | "),
 		promptSym,
+		promptlen+4,
 	)
 }
 
